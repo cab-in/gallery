@@ -4,25 +4,18 @@
 
 ## API
 ### Get all images
-Gets all images of a listing as identified by the listingid
+Gets all images of a listing.
 ```
 GET /api/:listingid/images
 ```
 
 ### Post an image
-Posts an image into a listing's image group
+Posts an image into a listing's image group.
 ```
 POST /api/:listingid/images
 ```
-
-### Update a single image
-Update an image into a listing's image group
-```
-PUT /api/:listingid/images/:imageid
-```
-
-### Update image(s)
-Update a single or group of image(s) of a listing.
+### Update an image
+Update a single or group of images of a listing.
 ```
 PATCH /api/:listingid/images/:imageid
 ```
@@ -30,7 +23,7 @@ PATCH /api/:listingid/images/:imageid
 ### Delete an image
 Delete an image in a listing depending on image id.
 ```
-PATCH /api/:listingid/images/:imageid
+DELETE /api/:listingid/images/:imageid
 ```
 
 
