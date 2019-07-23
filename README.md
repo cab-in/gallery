@@ -2,7 +2,7 @@
 
 > Project description
 
-## Get all images
+### Get all images
 Gets all images of a listing as identified by the listingid
 ```
 GET /api/:listingid/images
