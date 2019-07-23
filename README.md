@@ -5,34 +5,34 @@
 ## API
 
 **POST**
+Adds an image into the listing's section
 ```
 /api/:listingid/images
 ```
-Adds an image into the listing's section
 
 **GET**
+Gets all the images for listing
 ```
 /api/:listingid/images
 ```
-Gets all the images for listing
 
 **UPDATE**
+Updates specific image in the listing's section
 ```
 /api/:listingid/images/:imageid
 ```
-Updates specific image in the listing's section
 
 **PATCH**
+Updates specific image(s) in the listing's section
 ```
 /api/:listingid/images/:imageid
 ```
-Updates specific image(s) in the listing's section
 
 **DELETE**
+Updates specific image in the listing's section
 ```
 /api/:listingid/images/:imageid
 ```
-Updates specific image in the listing's section
 
 
 
