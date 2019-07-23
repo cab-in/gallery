@@ -21,11 +21,11 @@ Update an image of a listing.
 PUT /api/:listingid/images/:imageid
 ```
 
-### Update an image
+<!-- ### Update an image
 Update an image of a listing.
 ```
 PATCH /api/:listingid/images/:imageid
-```
+``` -->
 
 ### Delete an image
 Delete an image in a listing depending on image id.
