@@ -4,7 +4,7 @@
 
 ## API
 
-**POST** | /api/:listingid/images
+##POST##  */api/:listingid/images*
 
 Adds an image into the listing's section
 
