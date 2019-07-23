@@ -1,4 +1,4 @@
-# Bedroost Gallery Module
+# Cab.in Gallery Module
 
 > Project description
 
