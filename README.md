@@ -14,8 +14,15 @@ Posts an image into a listing's image group.
 ```
 POST /api/:listingid/images
 ```
+
 ### Update an image
-Update a single or group of images of a listing.
+Update an image of a listing.
+```
+PUT /api/:listingid/images/:imageid
+```
+
+### Update an image
+Update an image of a listing.
 ```
 PATCH /api/:listingid/images/:imageid
 ```
