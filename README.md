@@ -2,44 +2,35 @@
 
 > Project description
 
+## API
 ### Get all images
 Gets all images of a listing as identified by the listingid
 ```
 GET /api/:listingid/images
 ```
 
-## POST all images
-Gets all images of a listing as identified by the listingid
+### Post an image
+Posts an image into a listing's image group
 ```
-/api/:listingid/images
-```
-
-**POST**  /api/:listingid/images
-
-
-
-**GET**
-Gets all the images for listing
-```
-/api/:listingid/images
+POST /api/:listingid/images
 ```
 
-**UPDATE**
-Updates specific image in the listing's section
+### Update a single image
+Update an image into a listing's image group
 ```
-/api/:listingid/images/:imageid
-```
-
-**PATCH**
-Updates specific image(s) in the listing's section
-```
-/api/:listingid/images/:imageid
+PUT /api/:listingid/images/:imageid
 ```
 
-**DELETE**
-Updates specific image in the listing's section
+### Update image(s)
+Update a single or group of image(s) of a listing.
 ```
-/api/:listingid/images/:imageid
+PATCH /api/:listingid/images/:imageid
+```
+
+### Delete an image
+Delete an image in a listing depending on image id.
+```
+PATCH /api/:listingid/images/:imageid
 ```
 
 
