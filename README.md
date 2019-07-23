@@ -2,11 +2,21 @@
 
 > Project description
 
-## API
+## Get all images
+Gets all images of a listing as identified by the listingid
+```
+GET /api/:listingid/images
+```
 
-##POST##  */api/:listingid/images*
+## POST all images
+Gets all images of a listing as identified by the listingid
+```
+/api/:listingid/images
+```
 
-Adds an image into the listing's section
+**POST**  /api/:listingid/images
+
+
 
 **GET**
 Gets all the images for listing
