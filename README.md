@@ -2,6 +2,40 @@
 
 > Project description
 
+## API
+
+**POST**
+```
+/api/:listingid/images
+```
+Adds an image into the listing's section
+
+**GET**
+```
+/api/:listingid/images
+```
+Gets all the images for listing
+
+**UPDATE**
+```
+/api/:listingid/images/:imageid
+```
+Updates specific image in the listing's section
+
+**PATCH**
+```
+/api/:listingid/images/:imageid
+```
+Updates specific image(s) in the listing's section
+
+**DELETE**
+```
+/api/:listingid/images/:imageid
+```
+Updates specific image in the listing's section
+
+
+
 ## Related Projects
 
   - https://github.com/bedroost/review
