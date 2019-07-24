@@ -3,7 +3,7 @@
 > Project description
 
 ## API
-**Get all images:**
+**- Get all images:**
 Gets all images of a listing.
 
 Method | URL | Required
