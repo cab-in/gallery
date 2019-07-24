@@ -8,7 +8,7 @@ Gets all images of a listing.
 
 Method | URL | Required
 --- | --- | ---
-GET | /api/:listingid/images | listingid=[integer]
+GET | `/api/:listingid/images` | `listingid=[integer]`
 
 
 **• Add an image:**
@@ -16,7 +16,7 @@ Adds an image into a listing's image group.
 
 Method | URL | Required
 --- | --- | ---
-POST | /api/:listingid/images | listingid=[integer]
+POST | `/api/:listingid/images` | `listingid=[integer]`
 
 
 **• Update an image:**
@@ -24,7 +24,7 @@ Update an image of a listing.
 
 Method | URL | Required
 --- | --- | ---
-PUT | /api/:listingid/images/:imageid | listingid=[integer], imageid=[integer]
+PUT | `/api/:listingid/images/:imageid` | `listingid=[integer]`, `imageid=[integer]`
 
 <!-- ### Update an image
 Update an image of a listing.
@@ -37,7 +37,7 @@ Delete an image in a listing depending on image id.
 
 Method | URL | Required
 --- | --- | ---
-DELETE | DELETE /api/:listingid/images/:imageid | listingid=[integer], imageid=[integer]
+DELETE | `/api/:listingid/images/:imageid` | `listingid=[integer]`, `imageid=[integer]`
 
 
 
