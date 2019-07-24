@@ -6,38 +6,25 @@
 ### Get all images
 Gets all images of a listing.
 
-Method | Required
---- | ---
-GET | listingid=[integer]
+Method | URL | Required
+--- | --- | ---
+GET | /api/:listingid/images | listingid=[integer]
 
-**URL**
-```
-/api/:listingid/images
-```
 
 ### Post an image
 Posts an image into a listing's image group.
 
-Method | Required
---- | ---
-POST | listingid=[integer]
+Method | URL | Required
+--- | --- | ---
+POST | /api/:listingid/images | listingid=[integer]
 
-**URL**
-```
-POST /api/:listingid/images
-```
 
 ### Update an image
 Update an image of a listing.
 
-Method | Required
---- | ---
-PUT | listingid=[integer], imageid=[integer]
-
-**URL**
-```
-PUT /api/:listingid/images/:imageid
-```
+Method | URL | Required
+--- | --- | ---
+PUT | /api/:listingid/images/:imageid | listingid=[integer], imageid=[integer]
 
 <!-- ### Update an image
 Update an image of a listing.
@@ -48,15 +35,9 @@ PATCH /api/:listingid/images/:imageid
 ### Delete an image
 Delete an image in a listing depending on image id.
 
-Method | Required
---- | ---
-DELETE | listingid=[integer], imageid=[integer]
-
-**URL**
-```
-DELETE /api/:listingid/images/:imageid
-```
-
+Method | URL | Required
+--- | --- | ---
+DELETE | DELETE /api/:listingid/images/:imageid | listingid=[integer], imageid=[integer]
 
 
 ## Related Projects
