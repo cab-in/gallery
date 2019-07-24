@@ -6,6 +6,10 @@
 ### Get all images
 Gets all images of a listing.
 
+Method | Required
+--- | ---
+GET | listingid=[integer]
+
 **Method:**
 
 - GET
@@ -17,7 +21,7 @@ Gets all images of a listing.
 
 **Required**
 
-  -listingid=[integer]
+- listingid=[integer]
 
 ### Post an image
 Posts an image into a listing's image group.
