@@ -5,7 +5,9 @@
 ## API
 ### Get all images
 Gets all images of a listing.
+
 **Method:**
+
 - GET
 
 **URL**
@@ -14,6 +16,7 @@ Gets all images of a listing.
 ```
 
 **Required**
+
   -listingid=[integer]
 
 ### Post an image
