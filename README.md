@@ -5,9 +5,16 @@
 ## API
 ### Get all images
 Gets all images of a listing.
+*Method:*
+  -GET
+
+*URL*
 ```
-GET /api/:listingid/images
+/api/:listingid/images
 ```
+
+*Required*
+  -listingid=[integer]
 
 ### Post an image
 Posts an image into a listing's image group.
