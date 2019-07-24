@@ -40,6 +40,8 @@ Method | URL | Required
 DELETE | DELETE /api/:listingid/images/:imageid | listingid=[integer], imageid=[integer]
 
 
+
+
 ## Related Projects
 
   - https://github.com/bedroost/review
