@@ -3,7 +3,7 @@
 > Project description
 
 ## API
-**Get all images**
+**Get all images:**
 Gets all images of a listing.
 
 Method | URL | Required
@@ -11,7 +11,7 @@ Method | URL | Required
 GET | /api/:listingid/images | listingid=[integer]
 
 
-### Post an image
+**Post an image**
 Posts an image into a listing's image group.
 
 Method | URL | Required
@@ -19,7 +19,7 @@ Method | URL | Required
 POST | /api/:listingid/images | listingid=[integer]
 
 
-### Update an image
+**Update an image**
 Update an image of a listing.
 
 Method | URL | Required
@@ -32,7 +32,7 @@ Update an image of a listing.
 PATCH /api/:listingid/images/:imageid
 ``` -->
 
-### Delete an image
+**Delete an image**
 Delete an image in a listing depending on image id.
 
 Method | URL | Required
