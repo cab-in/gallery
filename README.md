@@ -10,27 +10,31 @@ Method | Required
 --- | ---
 GET | listingid=[integer]
 
-**Method:**
-
-- GET
-
 **URL**
 ```
 /api/:listingid/images
 ```
 
-**Required**
-
-- listingid=[integer]
-
 ### Post an image
 Posts an image into a listing's image group.
+
+Method | Required
+--- | ---
+POST | listingid=[integer]
+
+**URL**
 ```
 POST /api/:listingid/images
 ```
 
 ### Update an image
 Update an image of a listing.
+
+Method | Required
+--- | ---
+PUT | listingid=[integer], imageid=[integer]
+
+**URL**
 ```
 PUT /api/:listingid/images/:imageid
 ```
@@ -43,6 +47,12 @@ PATCH /api/:listingid/images/:imageid
 
 ### Delete an image
 Delete an image in a listing depending on image id.
+
+Method | Required
+--- | ---
+DELETE | listingid=[integer], imageid=[integer]
+
+**URL**
 ```
 DELETE /api/:listingid/images/:imageid
 ```
