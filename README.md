@@ -5,15 +5,15 @@
 ## API
 ### Get all images
 Gets all images of a listing.
-*Method:*
-  -GET
+**Method:**
+- GET
 
-*URL*
+**URL**
 ```
 /api/:listingid/images
 ```
 
-*Required*
+**Required**
   -listingid=[integer]
 
 ### Post an image
