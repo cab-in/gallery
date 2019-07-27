@@ -4,9 +4,8 @@ const faker = require('faker');
 const fileStream = fs.createWriteStream('./gallery.csv');
 
 function write() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     fileStream.once('drain', resolve);
-    fileStream.on('error', reject);
   });
 }
 
@@ -20,7 +19,7 @@ const imageGen = (imageType) => {
 };
 
 async function writer() {
-  let ableToWrite = true;
+  let newWrite = true;
   for (let i = 0; i < 2; i += 1) {
     for (let j = 0; j < 6; j += 1) {
       const listingid = i + 1;
@@ -34,9 +33,9 @@ async function writer() {
       const caption = faker.lorem.words();
       const verified = Math.round(Math.random());
 
-      ableToWrite = fileStream.write(`${listingid},${url},${caption},${verified}\n`);
+      newWrite = fileStream.write(`${listingid},${url},${caption},${verified}\n`);
 
-      if (!ableToWrite) {
+      if (!newWrite) {
         await write();
       }
     }
