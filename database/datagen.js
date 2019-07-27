@@ -1,8 +1,6 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const fileStream = fs.createWriteStream('./gallery.csv');
-
 function write() {
   return new Promise((resolve) => {
     fileStream.once('drain', resolve);
@@ -18,9 +16,12 @@ const imageGen = (imageType) => {
   return `https://cabin-gallery.s3-us-west-1.amazonaws.com/${imageType}-${imageNumber}.jpg`;
 };
 
-async function writer() {
+async function writeGallery() {
+  const fileStream = fs.createWriteStream('./gallery.csv');
   let newWrite = true;
-  for (let i = 0; i < 2; i += 1) {
+  // Write galleries for 10 million listings
+  let id = 1;
+  for (let i = 0; i < 10; i += 1) {
     for (let j = 0; j < 6; j += 1) {
       const listingid = i + 1;
       let url = '';
@@ -33,8 +34,8 @@ async function writer() {
       const caption = faker.lorem.words();
       const verified = Math.round(Math.random());
 
-      newWrite = fileStream.write(`${listingid},${url},${caption},${verified}\n`);
-
+      newWrite = fileStream.write(`${id},${listingid},${url},${caption},${verified}\n`);
+      id += 1;
       if (!newWrite) {
         await write();
       }
@@ -43,4 +44,22 @@ async function writer() {
   fileStream.end();
 }
 
-writer();
+async function writeListings() {
+  const fileStream = fs.createWriteStream('listings.csv');
+  let newWrite = true;
+  // Write 10 million listings
+  for (let i = 0; i < 10; i += 1) {
+    const listingid = i + 1;
+
+    newWrite = fileStream.write(`${listingid}\n`);
+
+    if (!newWrite) {
+      await write();
+    }
+  }
+  fileStream.end();
+}
+
+
+writeGallery();
+writeListings();
