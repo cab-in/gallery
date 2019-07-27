@@ -11,11 +11,16 @@ const imageGen = (imageType) => {
 };
 const images = [];
 
-for (let i = 0; i < 100; i++) {
-  for (let j = 0; j < 6; j++) {
+for (let i = 0; i < 50; i += 1) {
+  for (let j = 0; j < 6; j += 1) {
     const image = [];
     const listingid = i + 1;
-    const url = imageGen();
+    let url = '';
+    if (j === 0) {
+      url = imageGen('house');
+    } else {
+      url = imageGen('interior');
+    }
     const caption = faker.lorem.words();
     const verified = Math.round(Math.random());
     image.push(listingid, url, caption, verified);
@@ -23,7 +28,3 @@ for (let i = 0; i < 100; i++) {
   }
 }
 console.log(images);
-
-
-// image.push(listingid, url, caption, verified); //each image
-// images.push(image); // array of all images
