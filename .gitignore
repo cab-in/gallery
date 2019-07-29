@@ -27,3 +27,6 @@ coverage
 build/
 dist/
 
+# Misc
+_misc/
+datagen/csv/

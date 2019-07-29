@@ -2,7 +2,7 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: '172.17.0.2',
+  host: 'localhost',
   user: 'root',
   multipleStatements: true,
 });
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS images (
   Verified INT,
   FOREIGN KEY (listing_ID)
     REFERENCES listings (listingID)
-);`
+);`;
 
 
 connection.connect((err) => {
@@ -34,7 +34,8 @@ connection.connect((err) => {
     console.log(err);
   }
   console.log('connected to database');
-  connection.query(sql, (err, results) => {
+  // eslint-disable-next-line no-shadow
+  connection.query(sql, (err) => {
     if (err) {
       console.log(err);
     } else {
