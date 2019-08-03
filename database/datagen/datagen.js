@@ -11,9 +11,9 @@ const write = (writer, data) => {
   }
 };
 
-// helper function for writeGallery
+// helper function for writeImages
 // accepts 'house' or 'interior' argument
-const imageGen = (imageType) => {
+const imageUrlGen = (imageType) => {
   let imageRandom = 0;
   // interior photos have larger range of possible images
   if (imageType === 'interior') {
@@ -27,33 +27,39 @@ const imageGen = (imageType) => {
   return `https://cabin-gallery.s3-us-west-1.amazonaws.com/${imageType}-${imageNumber}.jpg`;
 };
 
-const writeGallery = async () => {
-  const headerForGallery = 'id,listingId,imageUrl,caption,verified\n';
-  const fileStream1 = fs.createWriteStream('./csv/gallery.csv');
-  write(fileStream1, headerForGallery);
-  const max = 10000000;
+const writeImages = async () => {
+  const headerForImages = 'imageId,listingId,imageUrl,caption,verified\n';
+  const fileStream1 = fs.createWriteStream('./csv/imagesSample.csv');
+  write(fileStream1, headerForImages);
+  const max = 1000;
   let listingId = 1;
-  let id = 1;
+  let imageId = 1;
   while (listingId <= max) {
+    let madeImages = 0;
     let numberOfImages = 0;
-    // if decide to add some variation - faker.random.number({min:4, max:8});
-    while (numberOfImages < 6) {
+    const randomValue = Math.random();
+    if (randomValue < 0.9) {
+      numberOfImages = 6;
+    } else {
+      numberOfImages = faker.random.number({ min: 5, max: 30 });
+    }
+    while (madeImages < numberOfImages) {
       let url = '';
       // only first image of a listing has house image, the rest are interior
-      if (numberOfImages === 0) {
-        url = imageGen('house');
+      if (madeImages === 0) {
+        url = imageUrlGen('house');
       } else {
-        url = imageGen('interior');
+        url = imageUrlGen('interior');
       }
       const caption = faker.lorem.words();
       const verified = Math.round(Math.random());
-      const newWrite = `${id},${listingId},${url},${caption},${verified}\n`;
-      id += 1;
+      const newWrite = `${imageId},${listingId},${url},${caption},${verified}\n`;
+      imageId += 1;
       const promise = write(fileStream1, newWrite);
       if (promise) {
         await promise;
       }
-      numberOfImages += 1;
+      madeImages += 1;
     }
     listingId += 1;
   }
@@ -61,9 +67,9 @@ const writeGallery = async () => {
 
 const writeListings = async () => {
   const headerForListings = 'listingId\n';
-  const fileStream2 = fs.createWriteStream('./csv/listings.csv');
+  const fileStream2 = fs.createWriteStream('./csv/listingsSample.csv');
   write(fileStream2, headerForListings);
-  const max = 10000000;
+  const max = 1000;
   let listingId = 1;
   while (listingId <= max) {
     const newWrite = `${listingId}\n`;
@@ -76,4 +82,4 @@ const writeListings = async () => {
 };
 
 writeListings();
-writeGallery();
+writeImages();

@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 const faker = require('faker');
 const db = require('./index.js');
-const unsplash = require('./unsplashHelper.js');
+const unsplash = require('../datagen/unsplashHelper.js');
 
 unsplash.getImages('house', (err, houseData) => {
   if (err) {

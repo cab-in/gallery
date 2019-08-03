@@ -15,7 +15,7 @@ for (let pageNumber = 1; pageNumber < 28; pageNumber += 1) {
         console.log(err);
       } else {
         const download = function (uri, filename, callback) {
-          request.head(uri, function (err, res, body) {
+          request.head(uri, function (res) {
             console.log(houseData.results[imageNumber].urls.regular);
             console.log('content-type:', res.headers['content-type']);
             console.log('content-length:', res.headers['content-length']);
