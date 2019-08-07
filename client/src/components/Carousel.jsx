@@ -22,8 +22,8 @@ class Carousel extends React.Component {
 
   handleKeyPress(e) {
     const { images, imageClickHandler } = this.props;
-    const prevPhoto = images[images.length-1].ImageID;
-    const nextPhoto = images[1].ImageID;
+    const prevPhoto = images[images.length-1].imageid;
+    const nextPhoto = images[1].imageid;
     if (e.key === 'ArrowLeft') {
       imageClickHandler(prevPhoto);
     }
@@ -35,15 +35,15 @@ class Carousel extends React.Component {
   render() {
     const { images, imageClickHandler, renderView } = this.props;
     const { hidePhotoList } = this.state;
-    const nextPhoto = images[1].ImageID;
-    const prevPhoto = images[images.length-1].ImageID;
+    const nextPhoto = images[1].imageid;
+    const prevPhoto = images[images.length-1].imageid;
     return (
       <>
         <CloseButton renderView={renderView} />
         <div className={style.carouselContainer}>
           <div onClick={()=> imageClickHandler(prevPhoto)}><svg viewBox="0 0 18 18" width="4.8em" height="4.8em" fill="rgb(255, 255, 255)"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fillRule="evenodd" /></svg></div>
           <div className={style.carouselMainImage}>
-            <img alt="" src={images[0].ImageUrl} />
+            <img alt="" src={images[0].imageurl} />
           </div>
           <div onClick={()=> imageClickHandler(nextPhoto)}>
             <svg viewBox="0 0 18 18" width="4.8em" height="4.8em" fill="rgb(255, 255, 255)">
@@ -86,15 +86,15 @@ class Carousel extends React.Component {
               <div className={style.carouselImageList}>
                 { images.map((image, index) => {
                   const {
-                    ImageID, ImageUrl, Caption, Verified,
+                    imageid, imageurl, Caption, Verified,
                   } = image;
                   return (index < 6) ? (
                     <div>
                       <Image
                         imageClickHandler={imageClickHandler}
                         caption={Caption}
-                        ImageID={ImageID}
-                        ImageUrl={ImageUrl}
+                        imageid={imageid}
+                        imageurl={imageurl}
                         Verified={Verified}
                       />
                     </div>

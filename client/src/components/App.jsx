@@ -28,6 +28,7 @@ class App extends React.Component {
     const listing = window.location.href.split('/')[4];
     axios.get(`/api/${listing}/images`)
       .then((response) => {
+        console.log(response.data);
         this.setState({ images: response.data });
       })
       .catch((err) => {
@@ -35,16 +36,16 @@ class App extends React.Component {
       });
   }
 
-  imageClickHandler(imageID) {
-    this.setState({ carouselStart: imageID });
+  imageClickHandler(imageid) {
+    this.setState({ carouselStart: imageid });
     this.renderView('carousel');
   }
 
-  imageHoverHandler(imageID) {
+  imageHoverHandler(imageid) {
     const { view, images } = this.state;
     if (view === 'gallery') {
       for (let i = 0; i < images.length; i++) {
-        if (images[i].ImageID !== imageID) {
+        if (images[i].imageid !== imageid) {
           images[i].hoverClass = style.galleryImageHover;
         }
       }
@@ -84,7 +85,7 @@ class App extends React.Component {
         );
       case 'carousel':
         for (let i = 0; i < images.length; i++) {
-          if (images[i].ImageID === carouselStart) {
+          if (images[i].imageid === carouselStart) {
             var startID = i;
           }
         }

@@ -5,7 +5,7 @@ import style from '../style.css';
 const Gallery = (props) => {
   const { imageClickHandler, imageHoverHandler, imageUnHoverHandler } = props;
   return props.images.map((image, index) => {
-    const { ImageID, ImageUrl, Caption, Verified, hoverClass } = image;
+    const { imageid, imageurl, caption, verified, hoverClass } = image;
     const cssId = props.id || style.galleryImage + index;
     return (index < 4) ? (
       <div id={cssId}>
@@ -13,10 +13,10 @@ const Gallery = (props) => {
           imageUnHoverHandler={imageUnHoverHandler}
           imageHoverHandler={imageHoverHandler}
           imageClickHandler={imageClickHandler}
-          caption={Caption}
-          ImageID={ImageID}
-          ImageUrl={ImageUrl}
-          Verified={Verified}
+          caption={caption}
+          imageid={imageid}
+          imageurl={imageurl}
+          verified={verified}
           hoverClass={hoverClass}
         />
       </div>

@@ -28,10 +28,10 @@ const imageUrlGen = (imageType) => {
 };
 
 const writeImages = async () => {
-  const headerForImages = 'imageId,listingId,imageUrl,caption,verified\n';
-  const fileStream1 = fs.createWriteStream('./csv/imagesSample.csv');
+  const headerForImages = 'ImageID,listing_id,ImageUrl,Caption,Verified\n';
+  const fileStream1 = fs.createWriteStream('./csv/images.csv');
   write(fileStream1, headerForImages);
-  const max = 1000;
+  const max = 10000000;
   let listingId = 1;
   let imageId = 1;
   while (listingId <= max) {
@@ -41,7 +41,7 @@ const writeImages = async () => {
     if (randomValue < 0.9) {
       numberOfImages = 6;
     } else {
-      numberOfImages = faker.random.number({ min: 5, max: 30 });
+      numberOfImages = faker.random.number({ min: 5, max: 20 });
     }
     while (madeImages < numberOfImages) {
       let url = '';
@@ -66,10 +66,10 @@ const writeImages = async () => {
 };
 
 const writeListings = async () => {
-  const headerForListings = 'listingId\n';
-  const fileStream2 = fs.createWriteStream('./csv/listingsSample.csv');
+  const headerForListings = 'listingID\n';
+  const fileStream2 = fs.createWriteStream('./csv/listings.csv');
   write(fileStream2, headerForListings);
-  const max = 1000;
+  const max = 10000000;
   let listingId = 1;
   while (listingId <= max) {
     const newWrite = `${listingId}\n`;

@@ -3,15 +3,15 @@ import style from '../style.css';
 
 const Image = (props) => {
   const {
-    ImageUrl,
+    imageurl,
     imageClickHandler,
     imageHoverHandler,
     imageUnHoverHandler,
-    ImageID,
+    imageid,
     hoverClass,
   } = props;
 
-  return <img onClick={ () => { imageClickHandler(ImageID) } } onMouseEnter={ imageHoverHandler && (() => imageHoverHandler(ImageID)) } onMouseLeave={ imageUnHoverHandler && (() => imageUnHoverHandler()) } className={style.galleryImage + ' ' + hoverClass} alt="listing" src={ImageUrl} />;
+  return <img onClick={ () => { imageClickHandler(imageid) } } onMouseEnter={ imageHoverHandler && (() => imageHoverHandler(imageid)) } onMouseLeave={ imageUnHoverHandler && (() => imageUnHoverHandler()) } className={style.galleryImage + ' ' + hoverClass} alt="listing" src={imageurl} />;
 };
 
 export default Image;
