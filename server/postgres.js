@@ -4,10 +4,10 @@ const Pool = require('pg').Pool;
 const { client } = require('./redis');
 
 const pool = new Pool({
-  user: 'foobar',
-  host: 'localhost',
+  user: 'power_user',
+  host: '52.53.163.44',
   database: 'gallery',
-  password: 'password',
+  password: '$poweruserpassword',
   port: 5432,
 });
 

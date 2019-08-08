@@ -54,7 +54,7 @@ class Carousel extends React.Component {
         <div id={style.carouselMainBelow} className={hidePhotoList ? style.carouselCaptionDrop : style.carouselCaptionUp}>
           <div id={style.carouselRow}>
             <div id={style.carouselCaptionVerified}>
-              <div id={style.carouselMainCaption}>{images[0].Caption}</div>
+              <div id={style.carouselMainCaption}>{images[0].caption}</div>
             </div>
             <div id={style.togglePhoto}>
               <button onClick={() => this.setState({ hidePhotoList: !hidePhotoList })} type="button" id={style.togglePhotoButton}>
@@ -79,23 +79,23 @@ class Carousel extends React.Component {
             </div>
           </div>
               <div id={style.carouselMainVerified}>
-                {(images[0].Verified) === 1 ? 'Verified Photo' : null }
+                {(images[0].verified) === 1 ? 'Verified Photo' : null }
               </div>
           {(hidePhotoList) === false
             ? (
               <div className={style.carouselImageList}>
                 { images.map((image, index) => {
                   const {
-                    imageid, imageurl, Caption, Verified,
+                    imageid, imageurl, caption, verified,
                   } = image;
                   return (index < 6) ? (
                     <div>
                       <Image
                         imageClickHandler={imageClickHandler}
-                        caption={Caption}
+                        caption={caption}
                         imageid={imageid}
                         imageurl={imageurl}
-                        Verified={Verified}
+                        verified={verified}
                       />
                     </div>
                   ) : null;
