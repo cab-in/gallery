@@ -30,3 +30,7 @@ dist/
 # Misc
 _misc/
 database/datagen/csv/
+newrelic.js
+dump.rdb
+
+config/
