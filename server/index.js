@@ -10,6 +10,12 @@ const { cache } = require('./redis');
 const app = express();
 const port = process.env.PORT || 3003;
 
+// added for loaderio verification file to be added later
+app.use('/', expressStaticGzip(path.join(__dirname, '../public'), {
+  enableBrotli: true,
+  orderPreference: ['br', 'gz'],
+}));
+
 app.use('/rooms/:listingid', expressStaticGzip(path.join(__dirname, '../public'), {
   enableBrotli: true,
   orderPreference: ['br', 'gz'],
