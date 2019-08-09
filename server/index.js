@@ -9,6 +9,7 @@ const controllers = require('./postgres');
 const app = express();
 const port = process.env.PORT || 3003;
 
+app.use('/', express.static(path.join(__dirname, '../public')));
 
 app.use('/rooms/:listingid', express.static(path.join(__dirname, '../public')));
 
