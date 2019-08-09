@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 require('newrelic');
 const express = require('express');
-const cors = require('cors');
+const expressStaticGzip = require('express-static-gzip');
+// const cors = require('cors');
 const path = require('path');
 const controllers = require('./postgres');
 const { cache } = require('./redis');
@@ -9,8 +10,11 @@ const { cache } = require('./redis');
 const app = express();
 const port = process.env.PORT || 3003;
 
+app.use('/rooms/:listingid', expressStaticGzip(path.join(__dirname, '../public'), {
+  enableBrotli: true,
+  orderPreference: ['br', 'gz'],
+}));
 
-app.use('/rooms/:listingid', express.static(path.join(__dirname, '../public')));
 
 app.get('/api/:listingid/images', cache, controllers.getImages);
 
